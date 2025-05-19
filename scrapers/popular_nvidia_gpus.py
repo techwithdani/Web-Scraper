@@ -1,10 +1,13 @@
-from selenium import webdriver
 from bs4 import BeautifulSoup
+from utils import start_session, end_session
 
 URL = "https://www.techpowerup.com/gpu-specs/"
 
-driver = webdriver.Firefox()
 
-driver.get(URL)
+def scrap_nvidia_popular_gpus():
+    driver = start_session(URL)
 
-driver.quit()
+    end_session(driver)
+
+
+scrap_nvidia_popular_gpus()
